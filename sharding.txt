@@ -1,5 +1,5 @@
 
-go to c then create data name folder in thatt create 
+go to c drive then create data name folder in that create 
 conf
 rconf
 s1

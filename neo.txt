@@ -1,32 +1,43 @@
 #MONGO DB CRUD
 #Creating a New Database
 use userdb;
+
 #Creating Collection
 db.createCollection("posts")
+
 show collections
 #Creating Documents
 #insertOne():
 db.users.insertOne({ name: "Angela", age: 27 });
+
 #insertMany():
 db.users.insertMany([{name: "User1", age: 22}, {name: "User2", age: 25}]);
+
 #Read All the Documents
 db.users.find();
+
 #Read Document with specific query
 db.users.find({name: "User1"});
+
 #Read Document with query & projection
 db.users.find({name: "User1"}, {_id:0, age:0});
 #findOne() : Returns a single document object
 db.users.findOne({name: "User1"}, {_id:0, age:0});
+
 #Update Operations
 #updateOne()
 db.users.updateOne({ age: { $lt: 23 } }, { $set: { status: "active" } });
+
 #updateMany()
 db.users.updateMany({ age: { $gt: 23 } }, { $set: { status: "inactive" } });
+
 #Delete Operations
 #deleteOne()
 db.users.deleteOne({ name: "User2" });
+
 #deleteMany()
 db.users.deleteMany({name:"User1"})
+
 #Delete Collection
 db.users.drop()
 #Delete Database
@@ -101,11 +112,11 @@ db.test.find({ Location: 'Bhuj' }).explain("executionStats");
  #Phele three folder banna hai 
 Primary Replica1 Replica2 
 1.CMD
-mongod --port 27070 --dbpath "C:\Users\MANOJ JHA\OneDrive\Documents\replications\primary" --replSet rs
+mongod --port 27070 --dbpath "C:\Users\RAUNAK\OneDrive\Documents\replications\primary" --replSet rs
 2. CMD
-mongod --port 27071 --dbpath "C:\Users\MANOJ JHA\OneDrive\Documents\replications\repl1" --replSet rs
+mongod --port 27071 --dbpath "C:\Users\RAUNAK\OneDrive\Documents\replications\repl1" --replSet rs
 3. CMD
-mongod --port 27072 --dbpath "C:\Users\MANOJ JHA\OneDrive\Documents\replications\repl2" --replSet rs
+mongod --port 27072 --dbpath "C:\Users\RAUNAK\OneDrive\Documents\replications\repl2" --replSet rs
 4. CMD
 mongosh --port 207070
 rs.initiate({_id:"rs",members:[{_id:0,host:"localhost:27070"},{_id:1,host:"localhost:27071"},{_id:2,host:"localhost:27072"}]})

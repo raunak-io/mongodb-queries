@@ -51,9 +51,9 @@ db.users.find({
     ]
 });
 
- db.arp.Update({name:'arp'},{$set:{age:22}})
+ db.arp.update({name:'arp'},{$set:{age:22}})
 
- db.arp.UpdateOne({name:'arp'},{$set:{age:22}})
+ db.arp.updateOne({name:'arp'},{$set:{age:22}})
 
  db.arp.updateMany({},{$set:{tenthpass:'yes'}})
 

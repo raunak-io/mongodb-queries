@@ -1,4 +1,4 @@
-go to c create data name folder then create db db1 db2
+go to c drive and create data name folder then create db db1 db2
 ##
 mongod --port 27050 --replSet rs0 --dbpath "c:\data\db" --bind_ip localhost
 ##
