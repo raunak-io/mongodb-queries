@@ -1,0 +1,51 @@
+insql 
+
+
+-- Creating a basic index on a single column
+CREATE INDEX idx_customer_name ON customers (customer_name);
+
+-- Creating a unique index
+CREATE UNIQUE INDEX idx_unique_email ON users (email);
+
+-- Creating a composite index on multiple columns
+CREATE INDEX idx_order_date_customer_id ON orders (order_date, customer_id);
+
+SHOW INDEX FROM table_name;
+
+DROP Index indexname on  table name 
+
+
+Inmongodb
+
+
+// Creating an index on a single field
+db.collection.createIndex({ "field_name": 1 });
+
+// Creating a unique index on a single field
+db.collection.createIndex({ "field_name": 1 }, { unique: true });
+
+// Creating a compound index on multiple fields
+db.collection.createIndex({ "field1": 1, "field2": -1 });
+
+// List all indexes on a collection
+db.collection.getIndexes();
+
+// Drop an index by name
+db.collection.dropIndex("index_name");
+
+// Drop all indexes except the default on _id
+db.collection.dropIndexes();
+
+
+// Analyze query performance with explain
+db.collection.find({ "field_name": "value" }).explain("executionStats");
+
+
+// Force MongoDB to use a specific index
+db.collection.find({ "field_name": "value" }).hint("index_name");
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+database backup
+
+ cd c:\Program Files\MySQL\MySQL Server 8.0\bin
+
+mysqldump -u root -p  databasename > path to save then\databasename.sql
+
+example :- msqldump -u root -p stu > D:\backup\stu.sql
+
+then opnn sql 
+
+drop database database name;
+
+create database newdatabase;
+
+mysql -u root -p stu < D:\backup\stu.sql
+

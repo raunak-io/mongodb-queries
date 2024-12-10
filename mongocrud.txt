@@ -1,0 +1,110 @@
+use database name
+
+mongoimport --db virat --collection arp --file yourJSONFile.json
+
+db.stu.insertOne({ key: "value" });
+
+db.stu.insertMany([
+    { key1: "value1" },
+    { key2: "value2" },
+    // More documents...
+]);
+
+
+db.users.findOne();
+
+
+db.users.find({ $or: [{ name: "John" }, { age: { $gt: 30 } }] });
+
+
+db.products.find({ price: { $lt: 20 } });
+
+
+db.products.find({ price: { $gte: 10 } });
+
+
+db.users.updateOne({ name: "John" }, { $set: { age: 35 } });
+
+
+db.products.updateMany({ price: { $gt: 20 } }, { $inc: { price: 5 } });
+
+
+db.users.deleteOne({ name: "John" });
+
+
+db.products.deleteMany({ price: { $lt: 15 } });
+
+
+db.collectionName.drop() 
+
+
+db.users.drop() 
+
+db.users.find({ $and: [{ name: "John" }, { age: { $gt: 25 } }] });
+
+db.users.find({ $or: [{ name: "John" }, { age: { $lt: 25 } }] });
+
+db.users.find({
+    $or: [
+        { name: "John" },
+        { age: { $lt: 25, $gt: 35 } }
+    ]
+});
+
+ db.arp.Update({name:'arp'},{$set:{age:22}})
+
+ db.arp.UpdateOne({name:'arp'},{$set:{age:22}})
+
+ db.arp.updateMany({},{$set:{tenthpass:'yes'}})
+
+ db.arp.updateMany({age:{$gt:20}},{$set:{status:'active'}})
+
+ db.arp.deleteOne({name:'motu'})
+
+ db.arp.deleteMany({age:{$lt:17}})
+
+mongoimport "D:\students.json" -d clg -c stu --jsonArray --drop
+
+db.stu.find({age:{$eq:12}})
+
+
+db.stu.find({age:{$ne:12}})
+
+ db.stu.find({age:{$gt:12}})
+
+db.stu.find({age:{$gte:12}})
+
+db.stu.find({age:{$lt:25,$gt:15}})
+
+db.stu.find({age:{$eq:22},'experience.duration':{$gt:1}},{bio:5})
+
+db.stu.find({age:{$in:[12,22]}})
+
+ db.stu.find({age:{$nin:[12,22]}})
+
+ db.stu.find({'Hobbies':'Walking'})
+
+db.stu.find({$or:[{age:{$lt:10}},{age:{$gt:12}}]})
+
+db.stu.find({$or:[{age:{$eq:10}},{age:{$eq:12}}]})
+
+db.stu.find({$and:[{age:{$eq:10}},{'experience.duration':{$eq:1}}]})
+
+ db.stu.find({$nor:[{age:{$eq:10}},{age:{$eq:12}}]})
+
+db.stu.find({$and:[{age:{$lt:23}},{hobbies:'TV Shows'}]})
+
+ db.stu.find({$and:[{age:{$not:{$lt:20}}},{age:{$not:{$gt:24}}}]})
+
+db.stu.find({hasMacBook:{$exists:true}})
+
+
+
+
+
+
+
+
+
+
+

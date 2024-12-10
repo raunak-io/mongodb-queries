@@ -1,0 +1,27 @@
+go to c create data name folder then create db db1 db2
+##
+mongod --port 27050 --replSet rs0 --dbpath "c:\data\db" --bind_ip localhost
+##
+mongod --port 27051 --replSet rs0 --dbpath "c:\data\db1" --bind_ip localhost
+##
+mongod --port 27052 --replSet rs0 --dbpath "c:\data\db2" --bind_ip localhost
+
+##
+mongosh --port 27050
+
+rs.initiate({_id: "rs0", members: [{_id: 0, host: "localhost:27050"}, {_id: 1, host: "localhost:27051"}, {_id: 2, host: "localhost:27052"}]});
+
+ rs.status()
+
+ rs.conf()
+
+
+to add more members
+ rs.add({host:"localhost:27054"})
+
+
+to remove
+
+ rs.remove({host:"localhost:27054"})
+
+
